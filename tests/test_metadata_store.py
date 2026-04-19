@@ -20,6 +20,7 @@ def test_metadata_store_round_trip_for_all_entities(tmp_path: Path) -> None:
         dataset_name="tlc_yellow_clean",
         version="2026-01",
         stage="clean",
+        upstream_dataset_id="tlc_yellow_raw_2026_01",
         source_type="local_artifact",
         source_uri="data/raw/yellow/2026-01/data.parquet",
         artifact_path="data/clean/yellow/2026-01/data.parquet",

@@ -34,16 +34,27 @@ class MetadataStore:
             connection.execute(
                 """
                 INSERT OR REPLACE INTO dataset_versions (
-                    dataset_id, dataset_name, version, stage, source_type, source_uri,
-                    artifact_path, schema_hash, row_count, created_at, quality_status,
+                    dataset_id,
+                    dataset_name,
+                    version,
+                    stage,
+                    upstream_dataset_id,
+                    source_type,
+                    source_uri,
+                    artifact_path,
+                    schema_hash,
+                    row_count,
+                    created_at,
+                    quality_status,
                     quality_report_path
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     dataset.dataset_id,
                     dataset.dataset_name,
                     dataset.version,
                     dataset.stage,
+                    dataset.upstream_dataset_id,
                     dataset.source_type,
                     dataset.source_uri,
                     dataset.artifact_path,
@@ -190,4 +201,3 @@ class MetadataStore:
     @staticmethod
     def _catalog_model_id_parts(registered_model_name: str, model_version: str) -> str:
         return f"{registered_model_name}:{model_version}"
-

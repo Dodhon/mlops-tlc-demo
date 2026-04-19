@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS dataset_versions (
     dataset_name TEXT NOT NULL,
     version TEXT NOT NULL,
     stage TEXT NOT NULL,
+    upstream_dataset_id TEXT,
     source_type TEXT NOT NULL,
     source_uri TEXT NOT NULL,
     artifact_path TEXT NOT NULL,

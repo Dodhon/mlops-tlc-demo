@@ -11,6 +11,7 @@ The repository is being built issue by issue. The first implementation slices es
 - SQLite-backed metadata store
 - baseline tests
 - official NYC TLC raw monthly ingest for yellow taxi parquet files
+- raw-to-clean validation pipeline with JSON quality reports
 
 ## Local Setup
 
@@ -29,17 +30,21 @@ python3 -m ruff check .
 src/mlops_tlc_demo/
   config.py
   contracts.py
+  data_prep/
+    clean_tlc.py
   ingestion/
     tlc.py
   metadata_schema.sql
   metadata_store.py
 tests/
+  test_clean_tlc.py
   test_contracts.py
   test_metadata_store.py
   test_tlc_ingest.py
 dev_plans/
   issue-2-bootstrap-contracts.md
   issue-3-ingest-raw-tlc.md
+  issue-4-cleaning-quality.md
 ```
 
 ## Local Metadata Entities
@@ -61,3 +66,12 @@ python -m mlops_tlc_demo.ingestion.tlc --month 2026-02
 ```
 
 The raw artifact is stored under `data/raw/yellow/YYYY-MM/data.parquet`, and the corresponding raw `DatasetVersion` is registered in the local SQLite metadata store.
+
+To clean a locally ingested month and emit a quality report:
+
+```bash
+. .venv/bin/activate
+python -m mlops_tlc_demo.data_prep.clean_tlc --month 2026-02 --replace
+```
+
+The clean artifact is stored under `data/clean/yellow/YYYY-MM/data.parquet`, and the quality report is stored under `artifacts/data_quality/yellow/YYYY-MM/report.json`.

@@ -1,10 +1,10 @@
 # Issue 4 Cleaning and Data-Quality Validation
 
 Plan level: L1
-Status: Draft
+Status: Implemented on branch; awaiting review
 Working branch: `codex/issue-4-cleaning-quality`
 Merge target: `main`
-PR URL: TBD
+PR URL: `https://github.com/Dodhon/mlops-tlc-demo/pull/14`
 Merge commit: TBD
 Domains: backend, data, github
 Skill hooks: `$github-cli-workflow`
@@ -71,7 +71,11 @@ The immediate user is the repo owner building a trustworthy MLOps demo. They nee
 - Issue: [#4](https://github.com/Dodhon/mlops-tlc-demo/issues/4)
 - Branch: `codex/issue-4-cleaning-quality`
 - PR URL: TBD
-- Evidence pointers: to be populated with `pytest`, `ruff`, and one live clean run against previously ingested raw data
+- Evidence pointers:
+  - `. .venv/bin/activate && python -m pytest` -> pass
+  - `. .venv/bin/activate && python -m ruff check .` -> pass
+  - `. .venv/bin/activate && python -m mlops_tlc_demo.ingestion.tlc --month 2026-02 --replace` -> pass
+  - `. .venv/bin/activate && python -m mlops_tlc_demo.data_prep.clean_tlc --month 2026-02 --replace` -> pass
 
 ### Code Style & Quality Bar References
 
