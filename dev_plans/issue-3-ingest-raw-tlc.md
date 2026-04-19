@@ -1,10 +1,10 @@
 # Issue 3 Ingest Raw NYC TLC Yellow Taxi Data
 
 Plan level: L1
-Status: Draft
+Status: Implemented on branch; awaiting review
 Working branch: `codex/issue-3-ingest-raw-tlc`
 Merge target: `main`
-PR URL: TBD
+PR URL: `https://github.com/Dodhon/mlops-tlc-demo/pull/13`
 Merge commit: TBD
 Domains: backend, data, github
 Skill hooks: `$github-cli-workflow`
@@ -66,7 +66,10 @@ The immediate user is the repo owner building a local MLOps demo. They need a re
 - Issue: [#3](https://github.com/Dodhon/mlops-tlc-demo/issues/3)
 - Branch: `codex/issue-3-ingest-raw-tlc`
 - PR URL: TBD after plan push
-- Evidence pointers: to be populated with `pytest`, `ruff`, and one live ingest proof
+- Evidence pointers:
+  - `. .venv/bin/activate && python -m pytest` -> pass
+  - `. .venv/bin/activate && python -m ruff check .` -> pass
+  - `. .venv/bin/activate && python -m mlops_tlc_demo.ingestion.tlc --month 2026-02 --replace` -> pass
 
 ### Code Style & Quality Bar References
 
@@ -162,7 +165,7 @@ Preconditions:
 Commands to run in this PR:
 - `. .venv/bin/activate && python -m pytest`
 - `. .venv/bin/activate && python -m ruff check .`
-- `. .venv/bin/activate && python -m mlops_tlc_demo.ingestion.tlc --month 2026-02`
+- `. .venv/bin/activate && python -m mlops_tlc_demo.ingestion.tlc --month 2026-02 --replace`
 
 Failure policy:
 - Any contract/metadata registration failure blocks completion.
