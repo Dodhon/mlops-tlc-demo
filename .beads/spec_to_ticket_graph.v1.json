@@ -1,5 +1,127 @@
 [
   {
+    "id": "mtd-hqn.5",
+    "title": "E5 Add tests and run one live feature-build proof",
+    "description": "Maps to R6.\n\nvalidation_contract:\n  required_checks:\n    - tests pass\n    - live feature build passes\n  automated_tests_required: true\n  manual_evidence_required:\n    - command output from live feature run\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:40:30.768564Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:31.281956Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E5",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 0
+  },
+  {
+    "id": "mtd-hqn.4",
+    "title": "E4 Register FeatureSetVersion metadata",
+    "description": "Maps to R5.\n\nvalidation_contract:\n  required_checks:\n    - feature metadata stored\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:40:30.646837Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:31.150873Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E4",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-hqn.3",
+    "title": "E3 Implement deterministic train validation split",
+    "description": "Maps to R4.\n\nvalidation_contract:\n  required_checks:\n    - split reproducible\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:40:30.533573Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:31.019414Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E3",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-hqn.2",
+    "title": "E2 Derive target and deterministic feature row identifier",
+    "description": "Maps to R2,R3.\n\nvalidation_contract:\n  required_checks:\n    - target derived\n    - row identifier stable\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:40:30.413607Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:30.886461Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E2",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-hqn.1",
+    "title": "E1 Implement feature-building module and artifact paths",
+    "description": "Maps to R1,R3.\n\nvalidation_contract:\n  required_checks:\n    - feature parquet written\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:40:30.295601Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:30.295601Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E1",
+      "execution"
+    ],
+    "dependency_count": 1,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-hqn",
+    "title": "Build deterministic trip-duration feature pipeline",
+    "description": "GitHub issue #5 parent task.\n\nvalidation_contract:\n  required_checks:\n    - feature artifact created\n    - train and validation split artifacts created\n    - feature metadata registered\n  automated_tests_required: true\n  manual_evidence_required:\n    - one live feature-build run captured\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "feature",
+    "created_at": "2026-04-19T00:40:30.183745Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:40:30.183745Z",
+    "external_ref": "gh:#5",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "data",
+      "features",
+      "issue-5"
+    ],
+    "dependency_count": 0,
+    "dependent_count": 5
+  },
+  {
     "id": "mtd-ltp.5",
     "title": "E5 Run one live clean pass and capture evidence",
     "description": "Maps to R1-R5.\n\nvalidation_contract:\n  required_checks:\n    - live raw month cleaned\n    - clean metadata visible\n  automated_tests_required: false\n  manual_evidence_required:\n    - command output from live clean run\n  blocked_by_missing_harness: false",
