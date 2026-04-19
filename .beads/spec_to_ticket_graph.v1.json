@@ -1,5 +1,127 @@
 [
   {
+    "id": "mtd-ltp.5",
+    "title": "E5 Run one live clean pass and capture evidence",
+    "description": "Maps to R1-R5.\n\nvalidation_contract:\n  required_checks:\n    - live raw month cleaned\n    - clean metadata visible\n  automated_tests_required: false\n  manual_evidence_required:\n    - command output from live clean run\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:36:03.094649Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:03.568999Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E5",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 0
+  },
+  {
+    "id": "mtd-ltp.4",
+    "title": "E4 Add automated tests for filtering and schema failure",
+    "description": "Maps to R6.\n\nvalidation_contract:\n  required_checks:\n    - tests cover bad rows\n    - tests cover missing columns\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:36:02.985594Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:03.445725Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E4",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-ltp.3",
+    "title": "E3 Emit quality report and register clean dataset",
+    "description": "Maps to R4,R5.\n\nvalidation_contract:\n  required_checks:\n    - report written\n    - clean dataset stored with upstream ref\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:36:02.876616Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:03.326350Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E3",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-ltp.2",
+    "title": "E2 Implement schema validation and cleaning rules",
+    "description": "Maps to R1,R2,R3.\n\nvalidation_contract:\n  required_checks:\n    - bad rows filtered\n    - missing schema rejected\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:36:02.768638Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:03.205231Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E2",
+      "execution"
+    ],
+    "dependency_count": 2,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-ltp.1",
+    "title": "E1 Extend DatasetVersion for upstream lineage",
+    "description": "Maps to R5.\n\nvalidation_contract:\n  required_checks:\n    - upstream_dataset_id persisted\n  automated_tests_required: true\n  manual_evidence_required: []\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "task",
+    "created_at": "2026-04-19T00:36:02.661638Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:02.661638Z",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "E1",
+      "execution"
+    ],
+    "dependency_count": 1,
+    "dependent_count": 1
+  },
+  {
+    "id": "mtd-ltp",
+    "title": "Clean and validate raw TLC data",
+    "description": "GitHub issue #4 parent task.\n\nvalidation_contract:\n  required_checks:\n    - clean parquet artifact created\n    - quality report artifact created\n    - clean dataset metadata registered with upstream reference\n  automated_tests_required: true\n  manual_evidence_required:\n    - one live clean run captured\n  blocked_by_missing_harness: false",
+    "status": "open",
+    "priority": 1,
+    "issue_type": "feature",
+    "created_at": "2026-04-19T00:36:02.552589Z",
+    "created_by": "thuptenwangpo",
+    "updated_at": "2026-04-19T00:36:02.552589Z",
+    "external_ref": "gh:#4",
+    "source_repo": ".",
+    "compaction_level": 0,
+    "original_size": 0,
+    "labels": [
+      "cleaning",
+      "data",
+      "issue-4"
+    ],
+    "dependency_count": 0,
+    "dependent_count": 5
+  },
+  {
     "id": "mtd-ym0.5",
     "title": "E5 Run one live TLC ingest and capture evidence",
     "description": "Maps to R1,R2,R3.\n\nvalidation_contract:\n  required_checks:\n    - live month ingested\n    - metadata visible after ingest\n  automated_tests_required: false\n  manual_evidence_required:\n    - command output from live ingest\n  blocked_by_missing_harness: false",

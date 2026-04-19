@@ -15,6 +15,7 @@ class DatasetVersion(ContractModel):
     dataset_name: str = Field(min_length=1)
     version: str = Field(min_length=1)
     stage: Literal["raw", "clean", "train", "validation", "score"]
+    upstream_dataset_id: str | None = None
     source_type: str = Field(min_length=1)
     source_uri: str = Field(min_length=1)
     artifact_path: str = Field(min_length=1)
@@ -65,4 +66,3 @@ class PredictionBatch(ContractModel):
     row_count: int = Field(ge=0)
     scored_at: datetime
     monitoring_report_path: str | None = None
-
