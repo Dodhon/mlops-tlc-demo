@@ -1,10 +1,10 @@
 # Issue 2 Bootstrap Contracts and Metadata Store
 
 Plan level: L1
-Status: Draft
+Status: Implemented on branch; awaiting review
 Working branch: `codex/issue-2-bootstrap-contracts`
 Merge target: `main`
-PR URL: TBD
+PR URL: `https://github.com/Dodhon/mlops-tlc-demo/pull/12`
 Merge commit: TBD
 Domains: backend, data, github
 Skill hooks: `$github-cli-workflow`
@@ -59,7 +59,9 @@ The immediate user is the repo owner building and demoing a local XGBoost-first 
 - Issue: [#2](https://github.com/Dodhon/mlops-tlc-demo/issues/2)
 - Branch: `codex/issue-2-bootstrap-contracts`
 - PR URL: TBD after plan commit/push
-- Evidence pointers: to be populated with `pytest` and lint output in this PR
+- Evidence pointers:
+  - `python -m pytest` -> pass
+  - `python -m ruff check .` -> pass
 
 ### Code Style & Quality Bar References
 
@@ -154,16 +156,15 @@ Recommended option: `pydantic` contracts + `sqlite3` store.
 Pre-change repo commands:
 - No repo-native validation commands exist yet.
 
-Post-change commands to be added in this PR:
-- `python3 -m pytest`
-- `python3 -m ruff check .`
-
-If `ruff` is introduced but not wired through `python3 -m ruff`, update this section in the PR to the exact installed command.
+Post-change commands added and executed in this PR:
+- `. .venv/bin/activate && python -m pytest`
+- `. .venv/bin/activate && python -m ruff check .`
 
 ### Testing Execution Protocol
 
 Preconditions:
 - Run from the active worktree root.
+- Create the virtual environment with Python 3.12 specifically because the machine-default Python 3.14 `venv` path is currently broken in this environment.
 - Install dependencies from the new project config before running validation.
 
 Run order:
